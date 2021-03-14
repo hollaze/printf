@@ -5,19 +5,10 @@
  * @c! character to print
  */
 
-void printf_c(char c, ...)
+void printf_c(char c)
 {
+	if (c == NULL)
+		return;
 
-	va_list args;
-
-
-	va_start(args, c);
-
-
-	c = va_arg(args, char);
-	c = _putchar(c);
-
-	va_end(args);
-
-
+	putchar(c);
 }
