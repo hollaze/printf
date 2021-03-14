@@ -1,14 +1,15 @@
 #include "holberton.h"
+#include <stdarg.h>
 
 /**
  * printf_c - print a character
- * @c! character to print
+ * @list: character to print
  */
 
-void printf_c(char c)
+int  printf_c(va_list list)
 {
-	if (c == NULL)
-		return;
-
-	putchar(c);
+	int i = 0;
+	i = va_arg(list, int);
+	_putchar(i);
+	return (1);
 }
