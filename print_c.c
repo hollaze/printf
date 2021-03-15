@@ -1,23 +1,17 @@
 #include "holberton.h"
+#include <strarg.h>
 
 /**
- * printf_c - print a character
- * @c: character to print
- */
+*print_c - function that print char
+@args: list of argument
+*Return : char
+*/
 
-void printf_c(char c)
+int print_c(va_list args)
 {
-	if (!c)
-		return;
+        int i;
 
-	_putchar(c);
-	_putchar('\n');
-}
-
-int main(void)
-{
-
-	printf_c('v');
-
-return (0);
+        i = va_arg(args, int);
+        _putchar(i);
+        return (1);
 }

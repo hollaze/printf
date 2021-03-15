@@ -9,7 +9,7 @@
  * Return: function if letter match, NULL otherwise
  */
 
-int (*get_op_func(char *s))(va_list)
+int (*get_letter_func(char *s))(va_list)
 {
 
 	Letter letters[] = {
