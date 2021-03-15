@@ -1,5 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-void _putchar(char c);
-int printf_c(va_list list);
+int _putchar(char c);
+void printf_c(char c);
+void printf_s(char *s);
+int string(va_list args);
 #endif
