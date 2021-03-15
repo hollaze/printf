@@ -8,7 +8,7 @@
  *
  */
 
-int printf_s(va_list args)
+int print_s(va_list args)
 {
 	int i;
 	char *s;

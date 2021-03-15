@@ -5,7 +5,7 @@
  * @per: percent to print
  */
 
-void printf_per(char per)
+void print_per(char per)
 {
 	per = '%';
 	_putchar(per);
