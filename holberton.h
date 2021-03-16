@@ -2,8 +2,10 @@
 #define HOLBERTON_H
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_c(char c);
-void print_s(char *s);
+int print_c(va_list args);
+int print_s(va_list args);
+int print_i(va_list args);
+int print_per(va_list args);
 
 /**
  * struct Letter - mainly used with get_letter_func
@@ -17,6 +19,6 @@ typedef struct Letter
 {
 	char *letter;
 	int (*f)(va_list);
-} Letter;
+} Letter_t;
 
 #endif
