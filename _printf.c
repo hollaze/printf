@@ -12,20 +12,32 @@ int _printf(const char *format, ...);
 {
 	va_list args;
 
-	int i = 0;
+	int i;
 	int (*res)(va_list);
 
-	if (!format)
-		return (i);
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
 
-	for (i ; format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		format = va_arg(args, char *);
+		if (format[i] == "%")
+		{
+			i++;
+
+			res = get_letter_func(format[i]);
+
+			if (res == NULL)
+				return (-1);
+
+			res(args);
+
+			continue;
+		}
+
 		_putchar(format[i]);
-		res = get_letter_func(format[i]);
-		res();
+
 	}
 
 	va_end(args);
