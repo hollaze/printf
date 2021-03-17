@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 
-	int i, count = 0;
+	int i = 0, count = 0;
 	int (*res)(va_list);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -20,23 +20,31 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 
-	for (i = 0; format[i] != '\0'; i++)
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i++;
-
-			res = get_letter_func(format[i]);
+			if (format[i + 1] != '\0')
+				res = get_letter_func(format[i + 1]);
 
 			if (res == NULL)
-				return (-1);
+			{
+				_putchar(format[i]);
+				i++;
+				count++;
+			}
 
-			count += res(args);
+			else
+			{
+				count += res(args);
+				i += 2;
+				continue;
+			}
 
-			continue;
 		}
 		_putchar(format[i]);
 		count++;
+		i++;
 	}
 
 	va_end(args);

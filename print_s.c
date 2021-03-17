@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
 
 /**
  * print_s - print a string
@@ -9,22 +8,19 @@
 
 int print_s(va_list args)
 {
-	int i, len = 0;
+	int i = 0;
 	char *s;
 
 	s = va_arg(args, char *);
 
-	while (s[len] != '\0')
-		len++;
+	if (s == NULL)
+		s = "(null)";
 
-	for (i = 0; i < len; i++)
+	while (s[i] != '\0')
 	{
-		if (!s)
-			return (-1);
-
 		_putchar(s[i]);
+		i++;
 	}
-
 
 return (i);
 }
