@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <strarg.h>
 
 /**
 *print_c - function that print char
@@ -9,9 +8,13 @@
 
 int print_c(va_list args)
 {
-        int i;
+        int c;
 
-        i = va_arg(args, int);
-        _putchar(i);
+	if (!c)
+		return (-1);
+
+        c = va_arg(args, int);
+        _putchar(c);
+
         return (1);
 }

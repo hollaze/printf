@@ -5,8 +5,9 @@
  * @per: percent to print
  */
 
-void print_per(char per)
+int print_per(va_list args __attribute__((unused)))
 {
-	per = '%';
-	_putchar(per);
+
+return (_putchar('%'));
+
 }

@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * get_op_func - search to match letters and invoke function
+ * get_letter_func - search to match letters and invoke function
  * if it does
  *
  * @s: letters to match
@@ -14,10 +14,9 @@ int (*get_letter_func(char *s))(va_list)
 
 	Letter_t letters[] = {
 
-	{"s", printf_s}, /*i equal 0*/
-	{"c", printf_c}, /*i equal 1 etc*/
-	{"d", printf_d},
-	{"i", printf_i},
+	{"s", print_s}, /*i equal 0*/
+	{"c", print_c}, /*i equal 1 etc*/
+	{"i", print_i},
 	{"%", print_per}
 
 };

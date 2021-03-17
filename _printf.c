@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
 
 /**
  * _printf - print any type
@@ -8,7 +7,7 @@
  * Return: Number of character
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	va_list args;
 
@@ -22,7 +21,7 @@ int _printf(const char *format, ...);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == "%")
+		if (format[i] == '%')
 		{
 			i++;
 
