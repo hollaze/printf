@@ -1,0 +1,55 @@
+.TH man 3 " 17 March 2021" "_printf man page"
+
+.SH NAME
+_printf() - takes input and prints to standard output.
+
+.SH SYNOPSIS
+#include "holberton.h"
+
+.B _printf
+.SH DESCRIPTION
+A function to produce and output string including any formated output according to a formatted specifier.
+
+.SH FORMAT - Syntax that specifies the start of a new format for the output.
+
+.B %c print a single char
+
+.B %s print a string
+
+.B %d print a integer base 10
+
+.B %i print an integer base auto detected
+
+.SH Return Value
+_printf() function return the number of characters printed.
+.br
+In case of format being NULL or the function finding any error, printf world return -1.
+
+.SH EXAMPLES
+int main()
+.br
+{
+	char a = 'z';
+.br
+	char *names = "Rif, Alrick, ";
+.br
+	int numb = 10;
+.br
+	_printf("%c, ", a);
+.br
+	_printf("%s, ", names);
+.br
+	_printf("%i.\n", numb);
+.br
+}
+.br
+.B OUTPUT:
+z, Rif, Alrick, 10.
+
+.SH AUTHORS
+.br
+Written by:
+.br
+.B Mamadou Cherif BA : 2744@holbertonschool.com
+.br
+.B Alrick Deperiers : 2794@holbertonschool.com
