@@ -2,27 +2,29 @@
 #include <stdarg.h>
 
 /**
- *
- *
- *
- *
+ * print_s - print a string
+ * @args: arguments to print
+ * Return: number of characters
  */
 
 int print_s(va_list args)
 {
-	int i;
+	int i, len = 0;
 	char *s;
 
-	for (i = 0; s[i] != '\0'; i++)
+	s = va_arg(args, char *);
+
+	while (s[len] != '\0')
+		len++;
+
+	for (i = 0; i < len; i++)
 	{
-		s = va_arg(args, char *);
 		if (!s)
 			return (-1);
 
 		_putchar(s[i]);
 	}
 
-	s[i] = '\0';
 
 return (i);
 }

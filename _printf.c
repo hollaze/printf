@@ -11,13 +11,14 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 
-	int i;
+	int i, count = 0;
 	int (*res)(va_list);
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
+
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -30,18 +31,17 @@ int _printf(const char *format, ...)
 			if (res == NULL)
 				return (-1);
 
-			res(args);
+			count += res(args);
 
 			continue;
 		}
-
 		_putchar(format[i]);
-
+		count++;
 	}
 
 	va_end(args);
 
-return (i);
+return (count);
 
 }
 

@@ -4,6 +4,7 @@
 /**
  * _putchar - write a char
  * @c: char
+ * Return: 1
  */
 
 int _putchar(char c)

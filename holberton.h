@@ -9,7 +9,7 @@ int print_c(va_list args);
 int print_s(va_list args);
 int print_i(va_list args);
 int print_per(va_list args);
-int (*get_letter_func(char *s))(va_list);
+int (*get_letter_func(char s))(va_list);
 
 /**
  * struct Letter - mainly used with get_letter_func

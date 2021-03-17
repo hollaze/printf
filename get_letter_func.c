@@ -9,7 +9,7 @@
  * Return: function if letter match, NULL otherwise
  */
 
-int (*get_letter_func(char *s))(va_list)
+int (*get_letter_func(char s))(va_list)
 {
 
 	Letter_t letters[] = {
@@ -17,15 +17,15 @@ int (*get_letter_func(char *s))(va_list)
 	{"s", print_s}, /*i equal 0*/
 	{"c", print_c}, /*i equal 1 etc*/
 	{"i", print_i},
-	{"%", print_per}
-
+	{"%", print_per},
+	{"d", print_i}
 };
 
 	int i = 0;
 
 	while (i < 5)
 	{
-		if (letters[i].letter[0] == s[0])
+		if (letters[i].letter[0] == s)
 			return (letters[i].f);
 
 		i++;

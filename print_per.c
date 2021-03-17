@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * printf_per - print percent
- * @per: percent to print
+ * print_per - print percent
+ * @args: argument to print
+ * Return: 1
  */
 
 int print_per(va_list args __attribute__((unused)))

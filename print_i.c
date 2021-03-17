@@ -9,29 +9,31 @@
 
 int print_i(va_list args)
 {
-	int i, n, count = 1;
+	int n, pow = 1, count = 0;
+	unsigned int nb;
 
 	n = va_arg(args, int);
-
-	if (!n)
-		return (0);
 
 	if (n < 0)
 	{
 		_putchar('-');
-		i = -n;
+		nb = -n;
+		count += 1;
 	}
 
 	else
-		i = n;
+		nb = n;
 
-	if (i > 9)
+	while (nb / pow > 9)
+		pow *= 10;
+
+	while (pow != 0)
 	{
-		print_i(i / 10);
-		i %= 10;
-		count++;
+		count += _putchar((nb / pow) + '0');
+
+		nb %= pow;
+		pow /= 10;
 	}
-	_putchar(i + '0');
 
 return (count);
 
